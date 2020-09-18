@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Mutant from "./Mutant";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    dna: ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"],
+  };
+
+  handleChange = (e) => {
+    this.setState({ dna: [e.target.value] });
+  };
+
+  preventSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <div className="container">
+          <div className="header">
+            <h1>Mutant Check</h1>
+          </div>
+          <form className="form">
+            <label>Ingrese cadena de ADN</label>
+            <input
+              type="text"
+              onChange={this.handleChange}
+              placeholder="ATGCGA CAGTGC TTATGT AGAAGG CCCCTA TCACTG"
+            />
+            <button onClick={this.preventSubmit}>Verificar ADN</button>
+            <br />
+            <Mutant dna={this.state.dna} />
+          </form>
+        </div>
+      </React.Fragment>
+    );
+  }
 }
 
 export default App;

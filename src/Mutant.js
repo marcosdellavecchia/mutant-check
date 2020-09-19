@@ -5,7 +5,7 @@ class Mutant extends React.Component {
     result: null,
   };
 
-  //Funcion para analizar ADN Mutante
+  // Función para analizar ADN Mutante
   isMutant = (dnaString) => {
     const matchA = ["A", "A", "A", "A"];
     const matchC = ["C", "C", "C", "C"];
@@ -71,14 +71,28 @@ class Mutant extends React.Component {
     }
   };
 
-  // Función para verificar el ADN en props y pasarlo al estado
-  checkDna = (e) => {
-    e.preventDefault();
-    this.setState({ result: this.isMutant(this.props.dna) });
+  joinInput = (array) => {
+    return array.join(" ");
   };
 
-  // Función para mostrar el resultado segun el estado 'result'
+  // Función para verificar la validez del ADN alojado en props y pasarlo al estado
+  checkDna = (e) => {
+    e.preventDefault();
+    // Regex para testear que no haya espacios vacíos
+    if (/^\s+$|^$/gi.test(this.props.dna) === true) {
+      alert("Debe ingresar una cadena de valores para analizar su ADN.");
+    }
+    // Regex para testear que solo se ingresen los caracteres A C G T
+    else if (/^[ACGT ]+$/i.test(this.joinInput(this.props.dna)) === false) {
+      alert("Sólo está permitido ingresar los caracteres A, C, G, T.");
+    }
+    // Si se verifican las condiciones, ejecuta la funcion y la guarda en el estado
+    else {
+      this.setState({ result: this.isMutant(this.props.dna) });
+    }
+  };
 
+  // Función para mostrar resultado en pantalla según el valor del estado 'result'
   getResult = () => {
     if (this.state.result === false) {
       return "Resultado: NO-MUTANTE";

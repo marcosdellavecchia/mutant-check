@@ -4,15 +4,11 @@ import Mutant from "./Mutant";
 
 class App extends React.Component {
   state = {
-    dna: "[]",
+    dna: " ",
   };
 
   handleChange = (e) => {
     this.setState({ dna: e.target.value.toUpperCase().split(" ") });
-  };
-
-  preventSubmit = (e) => {
-    e.preventDefault();
   };
 
   render() {

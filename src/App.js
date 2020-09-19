@@ -4,11 +4,11 @@ import Mutant from "./Mutant";
 
 class App extends React.Component {
   state = {
-    dna: ["ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG"],
+    dna: "[]",
   };
 
   handleChange = (e) => {
-    this.setState({ dna: [e.target.value] });
+    this.setState({ dna: e.target.value.toUpperCase().split(" ") });
   };
 
   preventSubmit = (e) => {
@@ -27,7 +27,10 @@ class App extends React.Component {
             <input
               type="text"
               onChange={this.handleChange}
-              placeholder="ATGCGA CAGTGC TTATGT AGAAGG CCCCTA TCACTG"
+              style={{ textTransform: "uppercase" }}
+              pattern="[ACGTacgt]"
+              title="Las letras ingresadas solo pueden ser: (A, T, C, G), las cuales representan cada base nitrogenada del ADN."
+              placeholder="AGGTGA TACTGC ATATGT AGTAGG TCCCCA CTACGT"
             />
             <button onClick={this.preventSubmit}>Verificar ADN</button>
             <br />

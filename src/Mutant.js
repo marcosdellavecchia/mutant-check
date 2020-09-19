@@ -67,13 +67,18 @@ function Mutant(props) {
     }
   }
 
-  let test = isMutant(props.dna);
+  const dnaResult = isMutant(props.dna);
 
   return (
     <React.Fragment>
-      <p>DNA Test Result:</p>
-      <p>{test === true ? "MUTANTE" : "NO-MUTANTE"}</p>
-      <p>ADN ingresado: {props.dna}</p>
+      <p
+        className="dnaresult"
+        style={{
+          color: dnaResult === true ? "green" : "red",
+        }}
+      >
+        {dnaResult === true ? "MUTANTE" : "NO-MUTANTE"}
+      </p>
     </React.Fragment>
   );
 }

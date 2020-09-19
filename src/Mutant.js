@@ -117,7 +117,6 @@ class Mutant extends React.Component {
     return (
       <React.Fragment>
         <button onClick={this.checkDna}>Verificar ADN</button>
-
         <p
           className="dnaresult"
           style={{

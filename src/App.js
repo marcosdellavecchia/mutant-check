@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import Mutant from "./Mutant";
+import Info from "./Info";
 
 class App extends React.Component {
   state = {
@@ -14,7 +15,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container">
+        <div className="container-box">
           <div className="header">
             <h1>Mutant Check</h1>
           </div>
@@ -28,6 +29,7 @@ class App extends React.Component {
             />
             <br />
             <Mutant dna={this.state.dna} />
+            <Info initialModalState={false} />
           </form>
         </div>
       </React.Fragment>

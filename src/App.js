@@ -28,11 +28,8 @@ class App extends React.Component {
               type="text"
               onChange={this.handleChange}
               style={{ textTransform: "uppercase" }}
-              pattern="[ACGTacgt]"
-              title="Las letras ingresadas solo pueden ser: (A, T, C, G), las cuales representan cada base nitrogenada del ADN."
               placeholder="AGGTGA TACTGC ATATGT AGTAGG TCCCCA CTACGT"
             />
-            <button onClick={this.preventSubmit}>Verificar ADN</button>
             <br />
             <Mutant dna={this.state.dna} />
           </form>

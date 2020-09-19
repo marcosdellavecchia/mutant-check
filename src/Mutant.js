@@ -1,8 +1,12 @@
 import React from "react";
 
-function Mutant(props) {
+class Mutant extends React.Component {
+  state = {
+    result: null,
+  };
+
   //Funcion para analizar ADN Mutante
-  function isMutant(dnaString) {
+  isMutant = (dnaString) => {
     const matchA = ["A", "A", "A", "A"];
     const matchC = ["C", "C", "C", "C"];
     const matchG = ["G", "G", "G", "G"];
@@ -65,22 +69,52 @@ function Mutant(props) {
     } else {
       return false;
     }
+  };
+
+  // Función para verificar el ADN en props y pasarlo al estado
+  checkDna = (e) => {
+    e.preventDefault();
+    this.setState({ result: this.isMutant(this.props.dna) });
+  };
+
+  // Función para mostrar el resultado segun el estado 'result'
+
+  getResult = () => {
+    if (this.state.result === false) {
+      return "Resultado: NO-MUTANTE";
+    }
+    if (this.state.result === true) {
+      return "Resultado: MUTANTE";
+    }
+    return "Esperando análisis...";
+  };
+
+  setColors = () => {
+    if (this.state.result === false) {
+      return "red";
+    }
+    if (this.state.result === true) {
+      return "green";
+    }
+    return "black";
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <button onClick={this.checkDna}>Verificar ADN</button>
+
+        <p
+          className="dnaresult"
+          style={{
+            color: this.setColors(),
+          }}
+        >
+          {this.getResult()}
+        </p>
+      </React.Fragment>
+    );
   }
-
-  const dnaResult = isMutant(props.dna);
-
-  return (
-    <React.Fragment>
-      <p
-        className="dnaresult"
-        style={{
-          color: dnaResult === true ? "green" : "red",
-        }}
-      >
-        {dnaResult === true ? "MUTANTE" : "NO-MUTANTE"}
-      </p>
-    </React.Fragment>
-  );
 }
 
 export default Mutant;

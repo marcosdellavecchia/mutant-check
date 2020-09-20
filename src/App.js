@@ -28,7 +28,6 @@ class App extends React.Component {
               type="text"
               onChange={this.handleChange}
               style={{ textTransform: "uppercase" }}
-              placeholder="AGGTGA TACTGC ATATGT AGTAGG TCCCCA CTACGT"
             />
             <br />
             <Mutant dna={this.state.dna} />

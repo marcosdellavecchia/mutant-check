@@ -105,32 +105,12 @@ form button:hover {
   color: gray;
 }
 
-/* Reduce el tamaño del texto dentro del place holder */
-::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  font-size: 14px;
-}
-::-moz-placeholder {
-  /* Firefox 19+ */
-  font-size: 14px;
-}
-:-ms-input-placeholder {
-  /* IE 10+ */
-  font-size: 14px;
-}
-:-moz-placeholder {
-  /* Firefox 18- */
-  font-size: 14px;
-}
-
-/* Oculta la columna de symbol y capitalización en pantallas inferiores a 480 px */
-
 @media only screen and (max-width: 480px) {
   .container-box {
-    width: 380px;
+    width: 100%;
   }
   .header h1 {
-    font-size: 34px;
+    font-size: 32px;
   }
   .example {
     font-size: 10px;

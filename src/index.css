@@ -71,9 +71,9 @@ form button:hover {
 }
 
 .info {
-  font-size: 12px;
+  font-size: 13px;
   color: gray;
-  margin-top: 50px;
+  margin-top: 25px;
   cursor: pointer;
 }
 
@@ -92,4 +92,25 @@ form button:hover {
 .pattern-list {
   margin-left: 20px;
   margin-top: 10px;
+}
+
+.example {
+  font-size: 12px;
+  font-style: italic;
+  margin-top: -8px;
+  color: gray;
+}
+
+/* Oculta la columna de symbol y capitalización en pantallas inferiores a 480 px */
+
+@media only screen and (max-width: 480px) {
+  .container-box {
+    width: 380px;
+  }
+  .header h1 {
+    font-size: 35px;
+  }
+  .example {
+    font-size: 10px;
+  }
 }

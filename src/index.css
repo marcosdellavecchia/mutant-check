@@ -19,7 +19,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   overflow: hidden;
   width: 450px;
-  height: 400px;
+  height: 430px;
   max-width: 100%;
 }
 
@@ -39,8 +39,8 @@ body {
 }
 
 input {
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: 12px;
+  margin-bottom: 12px;
   width: 100%;
   line-height: 2;
   text-align: center;
@@ -70,6 +70,10 @@ form button:hover {
   margin-top: 20px;
 }
 
+.header h1 {
+  font-weight: 700;
+}
+
 .info {
   font-size: 13px;
   color: gray;
@@ -97,8 +101,26 @@ form button:hover {
 .example {
   font-size: 12px;
   font-style: italic;
-  margin-top: -8px;
+  margin-top: -7px;
   color: gray;
+}
+
+/* Reduce el tamaño del texto dentro del place holder */
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  font-size: 14px;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 14px;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  font-size: 14px;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 14px;
 }
 
 /* Oculta la columna de symbol y capitalización en pantallas inferiores a 480 px */
@@ -108,7 +130,7 @@ form button:hover {
     width: 380px;
   }
   .header h1 {
-    font-size: 35px;
+    font-size: 34px;
   }
   .example {
     font-size: 10px;

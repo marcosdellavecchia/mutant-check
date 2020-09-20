@@ -100,7 +100,7 @@ class Mutant extends React.Component {
     if (this.state.result === true) {
       return "Resultado: MUTANTE";
     }
-    return "Esperando análisis...";
+    return "⠀";
   };
 
   setColors = () => {

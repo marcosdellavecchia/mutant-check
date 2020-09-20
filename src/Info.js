@@ -22,14 +22,14 @@ class Info extends React.Component {
     return (
       <React.Fragment>
         <span className="info" onClick={this.toggle}>
-          Ver criterio para análisis de ADN
+          Ver criterio para el análisis de ADN
         </span>
 
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
-          <ModalHeader>¿Cómo se verifica un ADN Mutante?</ModalHeader>
+          <ModalHeader>¿Cómo se valida un ADN Mutante?</ModalHeader>
           <ModalBody>
             <p>
-              Un ADN Mutante es aquel que cumple con el siguiente patrón
+              Se considera ADN mutante a aquel que respeta el siguiente patrón
               coloreado de bases nitrogenadas de forma exacta:
             </p>
             <div className="img-container">
@@ -64,7 +64,7 @@ class Info extends React.Component {
             </p>
           </ModalBody>
           <ModalFooter>
-            <Button color="primary" onClick={this.toggle}>
+            <Button color="primary" active onClick={this.toggle}>
               Volver al sitio
             </Button>
           </ModalFooter>

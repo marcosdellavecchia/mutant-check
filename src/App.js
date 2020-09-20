@@ -17,10 +17,13 @@ class App extends React.Component {
       <React.Fragment>
         <div className="container-box">
           <div className="header">
-            <h1>Mutant Check</h1>
+            <h1>Mutant Check App</h1>
           </div>
           <form className="form">
-            <label>Ingrese cadena de ADN</label>
+            <label>Ingrese una cadena de ADN</label>
+            <p className="example">
+              Ejemplo: AGGTGA TACTGC ATATGT AGTAGG TCCCCA CTACGT
+            </p>
             <input
               type="text"
               onChange={this.handleChange}

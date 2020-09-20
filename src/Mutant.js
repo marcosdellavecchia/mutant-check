@@ -52,18 +52,6 @@ class Mutant extends React.Component {
       }
     }
 
-    for (i = 0; i <= dnaString.length - matchA.length; i++) {
-      for (j = dnaString[i].length - 1; j >= 0 + matchA.length - 1; j--) {
-        dnaToAnalyse = [];
-        for (k = 0; k < matchA.length; k++) {
-          dnaToAnalyse.push(dnaString[i + k][j - k]);
-        }
-        if (dnaToAnalyse.join() === matchA.join()) {
-          counterA++;
-        }
-      }
-    }
-
     if (counterA === 1 && counterC === 1 && counterG === 1) {
       return true;
     } else {

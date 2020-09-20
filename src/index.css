@@ -116,3 +116,15 @@ form button:hover {
     font-size: 10px;
   }
 }
+
+@media only screen and (max-width: 370px) {
+  .container-box {
+    width: 100%;
+  }
+  .header h1 {
+    font-size: 30px;
+  }
+  .example {
+    font-size: 9px;
+  }
+}
